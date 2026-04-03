@@ -14,5 +14,8 @@ public class Course {
     private String code;
     private String title;
     private Integer credit;
-    private Integer departmentId;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "department_id") // column in courses table
+    private Department department;
 }
